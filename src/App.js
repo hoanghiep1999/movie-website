@@ -19,7 +19,7 @@ function App() {
           <Header />
 
           <Switch>
-            <Route path="/home" exact component={HomePage} />
+            <Route path="/movie-website" exact component={HomePage} />
             <Route path="/category/category=:category&page=:page" exact component={CategoryPage} />
             <Route path="/detail/category=:category&title=:title" exact component={DetailPage} />
             <Route path="/watchmovie/title=:title&episode=:episode" exact component={WatchMoviePage} />
