@@ -1,0 +1,567 @@
+.main-watch-page {
+    padding: 70px; 
+    border-top: 2px solid #141313;
+}
+
+.main-watch-detail {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-watch-detail > img {
+    width: 340px;
+    height: 510px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 20%), 8px 8px 60px -10px rgb(0 0 0 / 40%);
+    border-radius: 10px;
+}
+
+.main-watch-info {
+    width: 65%;
+}
+
+.main-watch-info > span {
+    display: block;
+    font-size: 57px;
+    font-weight: bold;
+    line-height: 72px;
+    width: 90%;
+}
+
+.main-watch-category {
+    padding: 20px 0;
+}
+
+.main-watch-category a {
+    display: inline-block;
+    margin-left: 8px;
+    position: relative;
+    top: 2px;
+    text-decoration: underline;
+    color: #cad3da;
+}
+
+.main-watch-category a:hover {
+    color: #fff;
+}
+
+.main-watch-content {
+    font-size: 16px;
+    padding-top: 20px;
+    color: #cad3da;
+    letter-spacing: 0.5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
+    overflow: hidden;
+}
+
+iframe {
+    width: 718px;
+    height: 400px;
+    margin: 60px 0 40px 0;
+}
+
+.main-watch-wrap {
+    display: flex;
+}
+
+.main-watch-episode {
+    width: 75%;
+    height: fit-content;
+    padding: 10px 0 0 0;
+    list-style: none;
+    display: flex;  
+    flex-wrap: wrap;
+}
+
+.main-watch-episode > li {
+    margin: 10px 10px 0 0;
+}
+
+.main-watch-episode > li:first-child {
+    display: block;
+    padding-top: 15px;
+    color: #899ead;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.main-watch-episode > li a:hover {
+    background-color: #278ffd;
+}
+
+.main-watch-episode > li a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    margin: 10px 10px 0 0;
+    padding: 6px;
+    border-radius: 7px;
+    width: 64px;
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+}
+
+.main-watch-others {
+    display: block;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.main-watch-others span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f1b722;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+}
+
+.main-watch-others > ul {
+    padding: 20px 0 0 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-watch-others > ul li {
+    margin: 0 16px 0 0; 
+    width: 210px;
+}
+
+.main-watch-others > ul li a:first-child {
+    display: block;
+    width: 168px;
+    height: 256px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 20%), 8px 8px 60px -10px rgb(0 0 0 / 40%);
+    border-radius: 7px;
+}
+
+.main-watch-others > ul li a:first-child:hover {
+    opacity: 0.8;
+}
+
+.main-watch-others-name {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 17px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 20px;
+    width: 90%;
+    line-height: 27px;
+}
+
+.main-watch-others-name:hover {
+    text-decoration: underline;
+}
+
+.main-watch-others-category {
+    padding: 12px 0;
+}
+
+.main-watch-others-category a {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 15px;
+    position: relative;
+    top: 2px;
+    text-decoration: underline;
+    color: #cad3da;
+}
+
+.main-watch-others-category a:hover {
+    color: #fff;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.sidebar-title {
+    display: block;
+    margin: 30px 0 20px 0;
+    font-size: 21px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #f1b722;
+}
+
+.sidebar-title:first-child {
+    margin-top: 0;
+}
+
+.sidebar-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.sidebar-list li {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sidebar-list li a:first-child {
+    display: block;
+    min-width: 74px;
+    height: 94px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 20%), 8px 8px 60px -10px rgb(0 0 0 / 40%);
+    border-radius: 7px;
+}
+
+.sidebar-list li a:first-child:hover {
+    opacity: 0.8;
+}
+
+.sidebar-item-info {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 27px;
+    text-decoration: none;
+    color: inherit;
+    padding-left: 25px;
+    overflow: hidden;
+}
+
+.sidebar-item-info:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1224px) {
+    .main-watch-info {
+        width: 60%;
+    }
+
+    .main-watch-info > span {
+        font-size: 43px;
+        line-height: 52px;
+    }
+}
+
+@media screen and (min-width: 1224px) {
+    .main-watch-others > ul li {
+        width: 22%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1224px) {
+    .main-watch-episode {
+        width: 70%;
+    }
+
+    .sidebar {
+        width: 30%;
+    }
+
+    .main-watch-others > ul li {
+        width: 22%;
+    }
+
+    .main-watch-others > ul li a:first-child {
+        width: 125px;
+        height: 190px;
+    }
+
+    .main-watch-others-category a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 876px) and (max-width: 1024px) {
+    .main-watch-detail > img {
+        width: 260px;
+        height: 400px;
+    }
+
+    .main-watch-episode {
+        width: 65%;
+    }
+
+    .main-watch-others span {
+        padding-right: 40px;
+    }
+
+    .sidebar {
+        width: 35%;
+    }
+} 
+
+@media screen and (max-width: 876px) { 
+    .main-watch-page {
+        padding: 70px; 
+    }
+
+    .main-watch-detail {
+        flex-direction: column;
+    }
+
+    .main-watch-info {
+        width: 100%;
+        padding: 14px 0 0 0;
+    }
+
+    .main-watch-detail > img {
+        width: 275px;
+        height: 380px;
+        align-self: center;
+    }
+
+    iframe {
+        margin-top: 0;
+    }
+
+    .main-watch-others > ul {
+        justify-content: center;
+    }
+
+    .main-watch-others > ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-watch-others > ul li a:first-child {
+        width: 140px;
+        height: 200px;
+        align-self: center;
+    }
+
+    .main-watch-others-name {
+        text-align: center;
+    }
+
+    .main-watch-wrap {
+        flex-direction: column;
+    }
+
+    .main-watch-episode {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-top: 1px solid #444141;
+        padding-top: 30px;
+    }
+
+    .sidebar-title {
+        text-align: center;
+    }
+    
+    .sidebar-item-info {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 876px) {
+    .main-watch-others > ul li {
+        width: 30%; 
+    }
+
+    iframe {
+        width: 640px;
+        height: 290px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main-watch-others > ul li {
+        width: 44%; 
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 720px) {
+    .main-watch-page {
+        padding: 30px 50px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 650px) {
+    .main-watch-detail > img {
+        width: 276px;
+        height: 404px;
+        align-self: center;
+    }
+
+    iframe {
+        width: 640px;
+        height: 252px;
+    }
+}
+
+@media screen and (max-width: 576px) { 
+    .main-watch-page {
+        padding: 30px 45px; 
+    }
+
+    .main-watch-detail > img {
+        width: 240px;
+        height: 360px;
+        align-self: center;
+    }
+
+    .main-watch-info > span {
+        width: 100%;
+        font-size: 35px;
+        line-height: 46px;
+    }
+
+    .main-watch-category {
+        font-size: 15px;
+        padding-top: 10px;
+    }
+
+    .main-watch-category img {
+        width: 15px;
+    }
+
+    iframe {
+        width: 640px;
+        height: 233px;
+    }
+
+    .main-watch-others > ul {
+        padding-top: 0;
+    }
+
+    .main-watch-others > ul li {
+        padding-top: 16px;
+    }
+
+    .main-watch-others > ul li a:first-child {
+        align-self: center;
+        width: 120px;
+        height: 160px;
+        background-position: center;
+    }
+
+    .main-watch-others-category {
+        padding-top: 10px;
+    }
+
+    .main-watch-others-name {
+        font-size: 16px;
+    }
+
+    .main-watch-others-category img {
+        width: 14px;
+    }
+
+    .main-watch-others-category a {
+        font-size: 15px;
+    }
+
+    .sidebar-list li {
+        padding: 12px 0;
+    }
+
+    .sidebar-list li a:first-child {
+        min-width: 110px;
+        height: 165px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .main-watch-page {
+        padding: 30px 20px; 
+    }
+
+    .main-watch-info > span {
+        font-size: 28px;
+        line-height: 35px;
+    }
+
+    .main-watch-category a {
+        font-size: 12px;
+    }
+
+    .main-watch-content {
+        font-size: 15px;
+        line-height: 25px;
+        padding-top: 0;
+    }
+
+    iframe {
+        width: 640px;
+        height: 177px;
+    }
+    
+    .main-watch-episode {
+        padding-top: 0;
+    }
+    
+    .main-watch-episode > li:first-child {
+        font-size: 15px;
+    }
+
+    .main-watch-episode > li a {
+        padding: 4px;
+        font-size: 13px;
+    }
+
+    .main-watch-others span {
+        padding: 0;
+    }
+
+    .main-watch-others span, .sidebar-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .main-watch-others-name {
+        text-align: center;
+        font-size: 13px;
+        line-height: 22px;
+        padding-top: 15px;
+        width: 97%;
+    }
+
+    .main-watch-others-category {
+        text-align: center;
+        margin-right: 0;
+        padding-top: 2px;
+    }
+
+    .main-watch-others-category img {
+        width: 14px;
+    }
+
+    .main-watch-others-category a {
+        font-size: 12px;
+    }
+
+    .sidebar-title {
+        margin-bottom: 0;
+    }
+
+    .sidebar-list li a:first-child {
+        min-width: 85px;
+        height: 120px;
+    }
+    
+    .sidebar-item-info {
+        font-size: 13px;
+        line-height: 22px;
+        padding-left: 16px;
+        text-align: center;
+    }
+}

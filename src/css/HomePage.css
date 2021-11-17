@@ -1,0 +1,164 @@
+.main {
+    padding: 30px 70px;
+}
+
+.main-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.main-item {
+    padding-bottom: 60px;
+}
+
+.main-item:last-child {
+    padding-bottom: 0;
+}
+
+.main-item-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-item-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.main-item-title::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #e50914;
+    position: absolute;
+    width: 106%;
+    bottom: -10px;
+}
+
+.main-item-wrap a {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    top: 2px;
+}
+
+.main-item-wrap a:hover {
+    transition: all 0.5s;
+    text-decoration: underline;
+    color: #e50914;
+}
+
+.main-card-list {
+    padding: 35px 0 0 0;
+    list-style: none;
+    position: relative;
+}
+
+/* Swiperjs */
+.swiper-button-prev, .swiper-button-next {
+    width: 56px;
+    height: 72px;
+    top: 45%;
+    background-color: rgba(0,0,0,0.6);
+    box-shadow: -3px 0 33px #fff;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+@media screen and (max-width: 876px) {
+    .swiper-button-next:after, .swiper-button-prev:after {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 876px) {
+    .swiper-button-prev, .swiper-button-next {
+        width: 50px;
+        height: 67px;
+    }
+
+    .main-card-list {
+        padding-top: 16px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .main-item-title::after {
+        bottom: -7px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 720px) {
+    .main {
+        padding: 30px 50px;
+    }
+
+    .main-card-list {
+        padding-top: 32px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main {
+        padding: 30px 45px;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        width: 38px;
+        height: 56px;
+    }
+
+    .main {
+        padding: 30px 50px;
+    }
+
+    .main-item {
+        padding-bottom: 30px;
+    }
+
+    .main-item-title {
+        font-size: 17px;
+    }
+    
+    .main-item-wrap a {
+        font-size: 14px;
+    }
+
+    .main-card-list {
+        padding-top: 14px;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        height: 52px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .main {
+        padding: 30px 20px;
+    }
+
+    .main-item-title::after {
+        bottom: -4px;
+    }
+
+    .main-card-list {
+        padding-top: 7px;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        width: 32px;
+        height: 40px;
+        top: 50%;
+    }
+}
