@@ -299,7 +299,8 @@
     height: 45px;
     position: relative;
     top: 5px;
-    left: 42%;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0.3;
     transition: all 0.5s;
     cursor: pointer;
@@ -337,7 +338,8 @@
     height: 45px;
     position: relative;
     top: 10px;
-    left: 42%;
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0.3;
     transition: all 0.5s;
     cursor: pointer;
