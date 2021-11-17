@@ -28,13 +28,13 @@ const Header = () => {
             <div className="header">
                 <div className={className} onClick={() => setToggle1(!toggle1)}></div>
                 <div className="header-list-wrap" style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
-                    <Link to="/" className="header-title">HOÀNG HIỆP <span>MOVIE</span></Link>
+                    <Link to="/movie-website" className="header-title">HOÀNG HIỆP <span>MOVIE</span></Link>
                     <div className="header-list-btn1" onClick={() => setToggle1(!toggle1)}><div></div></div>
                 </div>
                 <div className="header-wrap">
                     <ul className={toggle1 ? "active" : ""}>
                         <li>
-                            <Link to="/">Trang chủ</Link>
+                            <Link to="/movie-website">Trang chủ</Link>
                         </li>
                         {
                             arrMovie.slice(8,10).map(item => {
