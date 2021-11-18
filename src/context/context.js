@@ -74,11 +74,11 @@ export const DataProvider = (props) => {
             {id: "10", category: "Phim lẻ", list: list10}, 
             {id: "11", category: "Phim chiếu rạp", list: list11}
         ]);
-    }, [listAllMovie]);
+    }, [listAllMovie, listMovie]);
 
-    console.log(listMovie);
+    /*console.log(listMovie);
     console.log(listAllMovie);
-    console.log(arrMovie);
+    console.log(arrMovie);*/
 
     return (
         <dataContext.Provider value={{listMovie, listAllMovie, arrMovie}}>

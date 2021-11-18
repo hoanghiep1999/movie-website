@@ -41,7 +41,7 @@ const HomePage = () => {
                     {
                         arrMovie.slice(0,6).map(type => {
                             return (
-                                <li className="main-item">
+                                <li className="main-item" key={type.id}>
                                     <div className="main-item-wrap">
                                         <span className="main-item-title">{type.category}</span>
                                         <Link to={`/category/category=${type.category.replace(/\s/g, '-')}&page=1`}>Xem thêm</Link>
@@ -79,14 +79,14 @@ const HomePage = () => {
                                         } 
                                         className="mySwiper">
                                         {
-                                            type.list.slice(0,10).map(item => {
+                                            type.list.slice(0,10).map((item,index) => {
                                                 if(item.episode.length === 0) 
-                                                    return <SwiperSlide><Card url={item.imageUrl} episode="none" category={type.category} title={item.title} urlTitle={item.urlTitle} /></SwiperSlide>;
+                                                    return <SwiperSlide key={index}><Card url={item.imageUrl} episode="none" category={type.category} title={item.title} urlTitle={item.urlTitle} /></SwiperSlide>;
                                                 else if (item.episode.length === 1) {
-                                                    return <SwiperSlide><Card url={item.imageUrl} episode={`/watchmovie/title=${item.urlTitle}&episode=ban-full`} category={type.category} title={item.title} urlTitle={item.urlTitle} /></SwiperSlide>;
+                                                    return <SwiperSlide key={index}><Card url={item.imageUrl} episode={`/watchmovie/title=${item.urlTitle}&episode=ban-full`} category={type.category} title={item.title} urlTitle={item.urlTitle} /></SwiperSlide>;
                                                 }
                                                 else {
-                                                    return <SwiperSlide><Card url={item.imageUrl} episode={`/watchmovie/title=${item.urlTitle}&episode=tap-1`} category={type.category} title={item.title} urlTitle={item.urlTitle} /></SwiperSlide>;
+                                                    return <SwiperSlide key={index}><Card url={item.imageUrl} episode={`/watchmovie/title=${item.urlTitle}&episode=tap-1`} category={type.category} title={item.title} urlTitle={item.urlTitle} /></SwiperSlide>;
                                                 }
                                             })
                                         }

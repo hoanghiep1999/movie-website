@@ -301,7 +301,7 @@
     top: 5px;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.3;
+    opacity: 1;
     transition: all 0.5s;
     cursor: pointer;
     display: none;
@@ -312,7 +312,7 @@
 }
 
 .close:hover {
-    opacity: 1;
+    opacity: 0.3;
 }
 
 .close:before, .close:after {
@@ -332,6 +332,40 @@
     transform: rotate(-45deg);
 }
 
+/* Close list button (Mobile) */
+.close-list {
+    width: 32px;
+    height: 45px;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: relative;
+    left: 16px;
+    display: none;
+}
+
+.close-list:hover {
+    opacity: 0.3;
+}
+
+.close-list:before, .close-list:after {
+    position: absolute;
+    left: 15px;
+    content: "";
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
+}
+
+.close-list:before {
+    transform: rotate(45deg);
+}
+
+.close-list:after {
+    transform: rotate(-45deg);
+}
+
 /* Open button */
 .open {
     width: 32px;
@@ -340,7 +374,7 @@
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.3;
+    opacity: 1;
     transition: all 0.5s;
     cursor: pointer;
 }
@@ -350,7 +384,7 @@
 }
 
 .open:hover {
-    opacity: 1;
+    opacity: 0.3;
 }
 
 .open:before, .open:after {
@@ -455,9 +489,9 @@
         align-items: center;
         z-index: 3;
         overflow-y: auto; 
-        box-shadow: 5px 5px 20px rgba(0,0,0,0.02);
+        box-shadow: 0 0 20px hsl(0deg 0% 100% / 20%), 8px 8px 60px -10px rgb(0 0 0 / 40%);
         border-left: 2px solid rgba(0,0,0,0.02);
-        transition: all 0.25s;
+        transition: ease-in-out 0.5s;
     }
 
     .header-wrap > ul.active {
@@ -483,6 +517,10 @@
 
     .header-wrap > ul > li {
         padding: 20px 0;
+    }
+
+    .header-wrap > ul > li:last-child {
+        padding-top: 10px;
     }
 
     .header-wrap > ul > li:nth-child(4) {
@@ -527,6 +565,10 @@
     .header-wrap > ul > li .header-list-dropdown a:hover {
         transition: all 0.5s;
         color: #e50914;
+    }
+
+    .close-list {
+        display: block;
     }
 
     .header-list-btn2 {
@@ -653,12 +695,21 @@
 
     .header-login-btn {
         margin-top: 70px;
+        font-size: 15px;
     }
 }
 
 @media screen and (max-width: 440px) {
     .header {
         padding: 30px 20px 10px 20px;
+    }
+
+    .header-wrap > ul {
+        width: 100vw;
+    }
+
+    .header-wrap > ul.active {
+        right: 0;
     }
 }
 

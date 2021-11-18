@@ -15,41 +15,41 @@ const Footer = () => {
                 <div className="footer-info-wrap">
                     <ul>
                         <li>
-                            <Link to="/">FAQ</Link>
+                            <Link to="/movie-website">FAQ</Link>
                         </li>
                         <li>
-                            <Link to="/">Investor Relations</Link>
+                            <Link to="/movie-website">Investor Relations</Link>
                         </li>
                         <li>
-                            <Link to="/">Privacy</Link>
+                            <Link to="/movie-website">Privacy</Link>
                         </li>
                         <li>
-                            <Link to="/">Speed Test</Link>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <Link to="/">Help Center</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Jobs</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Cookie Preferences</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Legal Notices</Link>
+                            <Link to="/movie-website">Speed Test</Link>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <Link to="/">Media Center</Link>
+                            <Link to="/movie-website">Help Center</Link>
                         </li>
                         <li>
-                            <Link to="/">Terms of Use</Link>
+                            <Link to="/movie-website">Jobs</Link>
                         </li>
                         <li>
-                            <Link to="/">Contact Us</Link>
+                            <Link to="/movie-website">Cookie Preferences</Link>
+                        </li>
+                        <li>
+                            <Link to="/movie-website">Legal Notices</Link>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <Link to="/movie-website">Media Center</Link>
+                        </li>
+                        <li>
+                            <Link to="/movie-website">Terms of Use</Link>
+                        </li>
+                        <li>
+                            <Link to="/movie-website">Contact Us</Link>
                         </li>
                     </ul>
                 </div>

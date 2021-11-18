@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import '../css/Header.css';
 import close from '../svg/close.png';
 import {Link} from 'react-router-dom';
@@ -15,7 +15,7 @@ const Header = () => {
     const {listAllMovie, arrMovie} = useContext(dataContext);
     let data = [];
 
-    if (searchList !== "")
+    if(searchList !== "")
         data = listAllMovie.filter(movie => movie.title.indexOf(searchList) !== -1);
 
     let className = "overlay";
@@ -34,13 +34,13 @@ const Header = () => {
                 <div className="header-wrap">
                     <ul className={toggle1 ? "active" : ""}>
                         <li>
-                            <Link to="/movie-website">Trang chủ</Link>
+                            <Link to="/movie-website" onClick={() => setToggle1(!toggle1)}>Trang chủ</Link>
                         </li>
                         {
                             arrMovie.slice(8,10).map(item => {
                                 return (
-                                    <li>
-                                        <Link to={`/category/category=${item.category.replace(/\s/g, '-')}&page=1`}>{item.category}</Link>
+                                    <li key={item.id}>
+                                        <Link to={`/category/category=${item.category.replace(/\s/g, '-')}&page=1`} onClick={() => setToggle1(!toggle1)}>{item.category}</Link>
                                     </li>
                                 );
                             })
@@ -51,25 +51,30 @@ const Header = () => {
                             {
                                 arrMovie.slice(0,8).map(item => {
                                     return (
-                                        <li>
-                                            <Link to={`/category/category=${item.category.replace(/\s/g, '-')}&page=1`}>{item.category}</Link>
+                                        <li key={item.id}>
+                                            <Link to={`/category/category=${item.category.replace(/\s/g, '-')}&page=1`} onClick={() => setToggle1(!toggle1)}>{item.category}</Link>
                                         </li>
                                     );
                                 })
                             }
                                 <li>
-                                    <Link to={arrMovie.length !== 0 && `/category/category=${arrMovie[arrMovie.length-1].category.replace(/\s/g, '-')}&page=1`}>Phim chiếu rạp</Link>                         
+                                    {
+                                        arrMovie.length !== 0 && <Link to={`/category/category=${arrMovie[arrMovie.length-1].category.replace(/\s/g, '-')}&page=1`} onClick={() => setToggle1(!toggle1)}>Phim chiếu rạp</Link>
+                                    }                         
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <Link to="/contact">Liên hệ</Link>
+                            <Link to="/contact" onClick={() => setToggle1(!toggle1)}>Liên hệ</Link>
+                        </li>
+                        <li>
+                            <div className="close-list" onClick={() => setToggle1(!toggle1)}></div>
                         </li>
                     </ul>
                     <form>
                         <input type="text" placeholder="Điền ở đây..." onChange={(event) => setSearchList(event.target.value)}/>
                         <Link to={`/search/name=${searchList}&page=1`}><button type="submit" onClick={(event) => {
-                            if (searchList === ""){
+                            if(searchList === ""){
                                 event.preventDefault();
                                 setToggle3(false);
                                 setToggle4(!toggle4);

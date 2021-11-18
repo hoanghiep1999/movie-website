@@ -11,25 +11,25 @@ const DetailPage = () => {
     }
 
     const param = useParams();
-    console.log(param);
     const {arrMovie} = useContext(dataContext);
-    console.log(arrMovie);
     const arr = arrMovie.filter(item => item.category === param.category.replace(/-/g, ' '));
-    console.log(arr);
     const data = [];
+    /* Random item number */
+    let randomNum;
+    
     if(typeof arr[0] !== 'undefined' && arr[0].list.length !== 0) {
         const data2 = arr[0].list.filter(item => item.urlTitle === param.title);
         data.push(...data2);
+        randomNum = Math.floor(Math.random() * arr[0].list.length) - 4;
     }
-    console.log(data);
 
     return (
         <div className="main-detail-page">
             <div className="main-detail">
                 {
-                    data.length !== 0 && data.map(item => {
+                    data.length !== 0 && data.map((item, index) => {
                         return (
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <img src={item.imageUrl} alt="" />
                                 <ul className="main-detail-info">
                                     <span title={item.title}>{item.title}</span>
@@ -41,7 +41,7 @@ const DetailPage = () => {
                                     {item.episode.length === 0 && <Link to={`/detail/category=${item.category}/title=${item.urlTitle}`} style={{cursor: "default", backgroundColor: "gray"}}>Phim chưa được cập nhật !</Link>}
                                     <ul className="main-detail-episode">
                                         {item.episode.length !== 1 && item.episode.map((num) => 
-                                            <li>
+                                            <li key={num.episode}>
                                                 <Link to={`/watchmovie/title=${item.urlTitle}&episode=tap-${num.episode}`}>Tập {num.episode}</Link>
                                             </li> 
                                         )}
@@ -65,9 +65,9 @@ const DetailPage = () => {
                 <span>Có thể bạn cũng muốn xem</span>
                 <ul>
                     {
-                        typeof arr[0] !== 'undefined' && arr[0].list.length > 0 && arr[0].list.length === 4 && arr[0].list.slice(0,4).map(item => {
+                        typeof arr[0] !== 'undefined' && arr[0].list.length > 0 && arr[0].list.length === 4 && arr[0].list.slice(0,4).map((item, index) => {
                             return (
-                                <li>
+                                <li key={index}>
                                     <Link to={`/detail/category=${item.category.replace(/\s/g, '-')}&title=${item.urlTitle}`} style={{backgroundImage: `url(${item.imageUrl})`}} />
                                     <Link to={`/detail/category=${item.category.replace(/\s/g, '-')}&title=${item.urlTitle}`} className="main-detail-others-name" title={item.title}>{item.title}</Link>
                                     <div className="main-detail-category others">
@@ -79,9 +79,9 @@ const DetailPage = () => {
                         })
                     }
                     {
-                        typeof arr[0] !== 'undefined' && arr[0].list.length > 0 && arr[0].list.length >= 4 && arr[0].list.slice(2,6).map(item => {
+                        typeof arr[0] !== 'undefined' && arr[0].list.length > 0 && arr[0].list.length >= 4 && arr[0].list.slice(randomNum, randomNum + 4).map((item, index) => {
                             return (
-                                <li>
+                                <li key={index}>
                                     <Link to={`/detail/category=${item.category.replace(/\s/g, '-')}&title=${item.urlTitle}`} style={{backgroundImage: `url(${item.imageUrl})`}} />
                                     <Link to={`/detail/category=${item.category.replace(/\s/g, '-')}&title=${item.urlTitle}`} className="main-detail-others-name" title={item.title}>{item.title}</Link>
                                     <div className="main-detail-category others">

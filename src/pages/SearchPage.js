@@ -15,7 +15,6 @@ const SearchPage = () => {
     const {listAllMovie} = useContext(dataContext);
     const param = useParams();
     const data = listAllMovie.filter(movie => movie.title.indexOf(param.name) !== -1);
-    console.log(data);
 
     let numItem = 20;
     let start = parseInt((param.page-1) * numItem);
@@ -23,16 +22,14 @@ const SearchPage = () => {
     if (typeof data !== 'undefined')
         numPage = Math.ceil(data.length / 20);
 
-    console.log(numPage);
-
     return (
         <div className="main-detail-page">
             <div className="category-title category-search-title">Kết quả tìm kiếm với từ khóa: <span>{param.name}</span></div>
             <ul className="category-list-item">
                 {
-                    typeof data !== 'undefined' && data.length !== 0 && data.slice(start, param.page * numItem).map(item => {
+                    typeof data !== 'undefined' && data.length !== 0 && data.slice(start, parseInt(param.page) * numItem).map((item, index) => {
                         return (
-                            <li className="category-item">
+                            <li className="category-item" key={index}>
                                 <Link to={`/detail/category=${item.category.replace(/\s/g, '-')}&title=${item.urlTitle}`} style={{backgroundImage: `url(${item.imageUrl})`}} />
                                 <Link to={`/detail/category=${item.category.replace(/\s/g, '-')}&title=${item.urlTitle}`} className="category-item-name" title={item.title}>{item.title}</Link>
                                 <div className="category-item-type">
@@ -48,7 +45,7 @@ const SearchPage = () => {
             
             <Pagination className="pagination" aria-label="Page navigation example">
                 {
-                    param.page == 1 ? <PaginationItem disabled>
+                    parseInt(param.page) === 1 ? <PaginationItem disabled>
                         <PaginationLink
                         first
                         href={`/search/name=${param.name}&page=1`}
@@ -61,7 +58,7 @@ const SearchPage = () => {
                     </PaginationItem>
                 }
                 {
-                    param.page == 1 ? <PaginationItem disabled>
+                    parseInt(param.page) === 1 ? <PaginationItem disabled>
                         <PaginationLink
                         href={`/search/name=${param.name}&page=${parseInt(param.page)-1}`}
                         previous
@@ -77,7 +74,7 @@ const SearchPage = () => {
                     <span className="pagination-page">Trang: {param.page} / {numPage}</span>/*paginationList.map(item => item)*/
                 }
                 {
-                    param.page > 0 && param.page < numPage ? <PaginationItem>
+                    parseInt(param.page) > 0 && parseInt(param.page) < numPage ? <PaginationItem>
                         <PaginationLink
                         href={`/search/name=${param.name}&page=${parseInt(param.page)+1}`}
                         next
@@ -90,7 +87,7 @@ const SearchPage = () => {
                     </PaginationItem>
                 }
                 {
-                    parseInt(param.page) == numPage ? <PaginationItem disabled>
+                    parseInt(param.page) === numPage ? <PaginationItem disabled>
                         <PaginationLink
                         href={`/search/name=${param.name}&page=${numPage}`}
                         last

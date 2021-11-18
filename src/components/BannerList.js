@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import Banner from '../components/Banner';
 import {dataContext} from '../context/context';
 
@@ -27,18 +27,23 @@ SwiperCore.use([Navigation,Pagination]);
 
 const BannerList = () => {
     const {listMovie} = useContext(dataContext);
-    const items = [];
+    const data = [];
 
     if(typeof(listMovie.phimchieurap) !== 'undefined' && listMovie.phimchieurap.length !== 0) {
-        items.push(...listMovie.phimchieurap.slice(-3));
+        listMovie.phimchieurap.forEach(movie => {
+            if(typeof(movie.episode) !== 'undefined' && movie.episode[0].url.indexOf("https://ok.ru/") !== -1 )
+                {
+                    data.push(movie);
+                }
+        })
     }
 
     return (
         <Swiper slidesPerView={1} spaceBetween={30} loop={true} pagination={{"clickable": true}} navigation={false} className="mySwiper">
             {
-                items.map((item) => {
+                data.slice(0,5).map((item, index) => {
                     return (
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                             {item.episode.length === 0 && <Banner url={item.imageUrl} episode="none" category={item.category} title={item.title} urlTitle={item.urlTitle}/>}
                             {item.episode.length === 1 && <Banner url={item.imageUrl} episode={`/watchmovie/title=${item.urlTitle}&episode=ban-full`} category={item.category} title={item.title} urlTitle={item.urlTitle}/>}
                             {item.episode.length !== 1 && <Banner url={item.imageUrl} episode={`/watchmovie/title=${item.urlTitle}&episode=tap-1`} category={item.category} title={item.title} urlTitle={item.urlTitle}/>}

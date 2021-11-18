@@ -13,10 +13,8 @@ const CategoryPage = () => {
     }
 
     const param = useParams();
-    console.log(param);
     const {arrMovie} = useContext(dataContext);
     const data = arrMovie.filter(item => item.category === param.category.replace(/-/g, ' '));
-    console.log(data);
 
     return (
         <div className="main-category-page">
@@ -38,18 +36,18 @@ const CategoryPage = () => {
                     paginationList = [...paginationList, paginationItem];
                 }*/
                 return (
-                    <React.Fragment>
+                    <React.Fragment key={item.id}>
                         <div className="category-title">Thể loại: <span>{item.category}</span></div>
                         <ul className="category-list-item">
                         {
-                            typeof item.list !== 'undefined' && item.list.length !== 0 && item.list.slice(start, param.page * numItem).map(item2 => {
+                            typeof item.list !== 'undefined' && item.list.length !== 0 && item.list.slice(start, parseInt(param.page) * numItem).map((item2, index) => {
                                 return (
-                                    <li className="category-item">
+                                    <li className="category-item" key={index}>
                                         <Link to={`/detail/category=${item2.category.replace(/\s/g, '-')}&title=${item2.urlTitle}`} style={{backgroundImage: `url(${item2.imageUrl})`}} />
                                         <Link to={`/detail/category=${item2.category.replace(/\s/g, '-')}&title=${item2.urlTitle}`} className="category-item-name" title={item2.title}>{item2.title}</Link>
                                         <div className="category-item-type">
                                             <img src="https://www.ssphim.net/static/5fe2d564b3fa64a886a11cee/5fe2d564b3fa647446a11d19_tag.svg" width="17" alt="" />
-                                            <Link to={`/category/${item2.category.replace(/\s/g, '-')}`}>{item2.category}</Link>
+                                            <Link to={`/category/category=${item2.category.replace(/\s/g, '-')}&page=1`}>{item2.category}</Link>
                                         </div>
                                     </li>
                                 );
@@ -59,7 +57,7 @@ const CategoryPage = () => {
                         
                         <Pagination className="pagination" aria-label="Page navigation example">
                             {
-                                param.page == 1 ? <PaginationItem disabled>
+                                parseInt(param.page) === 1 ? <PaginationItem disabled>
                                     <PaginationLink
                                     first
                                     href={`/category/category=${item.category.replace(/\s/g, '-')}&page=1`}
@@ -72,7 +70,7 @@ const CategoryPage = () => {
                                 </PaginationItem>
                             }
                             {
-                                param.page == 1 ? <PaginationItem disabled>
+                                parseInt(param.page) === 1 ? <PaginationItem disabled>
                                     <PaginationLink
                                     href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)-1}`}
                                     previous
@@ -88,7 +86,7 @@ const CategoryPage = () => {
                                 <span className="pagination-page">Trang: {param.page} / {numPage}</span>/*paginationList.map(item => item)*/
                             }
                             {
-                                param.page > 0 && param.page < numPage ? <PaginationItem>
+                                parseInt(param.page) > 0 && parseInt(param.page) < numPage ? <PaginationItem>
                                     <PaginationLink
                                     href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)+1}`}
                                     next
@@ -101,7 +99,7 @@ const CategoryPage = () => {
                                 </PaginationItem>
                             }
                             {
-                                parseInt(param.page) == numPage ? <PaginationItem disabled>
+                                parseInt(param.page) === numPage ? <PaginationItem disabled>
                                     <PaginationLink
                                     href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${numPage}`}
                                     last
