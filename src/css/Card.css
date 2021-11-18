@@ -6,7 +6,7 @@
     max-height: 300px;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: -6px 0px 17px rgba(175, 174, 174, 0.25);
+    box-shadow: 0 0 10px #262626;
     background-size: cover;
     transition: all 0.7s;
     position: relative;
@@ -41,6 +41,12 @@
 }
 
 @media screen and (max-width: 576px) {
+    .main-card-img {
+        max-height: 135px;
+    }
+}
+
+@media screen and (max-width: 440px) {
     .main-card-img {
         max-height: 110px;
     }
