@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useRef} from 'react';
 import '../css/Header.css';
 import close from '../svg/close.png';
 import {Link} from 'react-router-dom';
@@ -22,6 +22,8 @@ const Header = () => {
     if(toggle1) {
         className += " active";
     }
+
+    let refInput = useRef();
 
     return (
         <React.Fragment>
@@ -72,12 +74,16 @@ const Header = () => {
                         </li>
                     </ul>
                     <form>
-                        <input type="text" placeholder="Điền ở đây..." onChange={(event) => setSearchList(event.target.value)}/>
+                        <input type="text" value={searchList} placeholder="Điền ở đây..." ref={refInput} onChange={(event) => setSearchList(event.target.value)}/>
                         <Link to={`/search/name=${searchList}&page=1`}><button type="submit" onClick={(event) => {
                             if(searchList === ""){
                                 event.preventDefault();
                                 setToggle3(false);
                                 setToggle4(!toggle4);
+                            }
+                            else {
+                                setSearchList("");
+                                refInput.current.focus();
                             }
                         }}>Tìm kiếm</button></Link>
                         <div className="form-result">

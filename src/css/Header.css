@@ -29,6 +29,8 @@
     padding-left: 0;
     margin: 0;
     list-style: none;
+    position: relative;
+    top: 2px;
 }
 
 .header-wrap > ul > li {
@@ -36,6 +38,14 @@
     padding: 0 10px;
     position: relative;
     cursor: pointer;
+}
+
+.header-wrap > ul > li:nth-child(5) {
+    padding-right: 0;
+}
+
+.header-wrap > ul > li:last-child {
+    display: none;
 }
 
 .header-wrap ul li:hover {
@@ -335,7 +345,7 @@
 /* Close list button (Mobile) */
 .close-list {
     width: 32px;
-    height: 45px;
+    height: 32px;
     transform: translateX(-50%);
     opacity: 1;
     transition: all 0.5s;
@@ -576,6 +586,16 @@
     }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1224px) {
+    .header form {
+        width: 325px;
+    }
+
+    .header form input {
+        width: calc(100% - 76px);
+    }
+}
+
 @media screen and (max-width: 876px) {
     .header {
         flex-direction: column;
@@ -655,7 +675,7 @@
 
 @media screen and (max-width: 576px) {
     .header {
-        padding: 30px 45px;
+        padding: 30px 45px 20px 45px;
     }
 
     .header-title {

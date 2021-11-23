@@ -53,11 +53,11 @@ const WatchMoviePage = () => {
                         </React.Fragment>
                 }
             </div>
-            {typeof data !== 'undefined' && data.episode.length === 1 && data.episode[0].url.indexOf("https://ok.ru/") !== -1 && <div style={{display: "flex",justifyContent: "center", marginTop: "20px"}}><iframe title="phim" src={data.episode[0].url} allowFullscreen="true" webkitallowFullscreen="true" mozallowFullscreen="true" /></div>}
+            {typeof data !== 'undefined' && data.episode.length === 1 && data.episode[0].url.indexOf("https://ok.ru/") !== -1 && <div style={{display: "flex",justifyContent: "center", marginTop: "20px"}}><iframe title="phim" src={data.episode[0].url} allow="fullscreen" webkitallowfullscreen="true" mozallowfullscreen="true" /></div>}
             {typeof data !== 'undefined' && data.episode.length === 1 && data.episode[0].url.indexOf("https://ok.ru/") === -1 && <div style={{display: "flex",justifyContent: "center", marginTop: "20px"}}><div style={{padding: "0 0 10px 0", textAlign: "center"}}>Rất tiếc, tập phim này hiện chưa được cập nhật.</div></div>}
             {typeof data !== 'undefined' && data.episode.length !== 1 && <div style={{display: "flex", justifyContent: "center", marginTop: "20px"}}>
                 {
-                    data.episode[param.episode.slice(4,5)-1].url !== '' && data.episode[param.episode.slice(4,5)-1].url.indexOf("https://ok.ru/") !== -1 && <iframe title="phim" src={data.episode[param.episode.slice(4,5)-1].url} allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" />
+                    data.episode[param.episode.slice(4,5)-1].url !== '' && data.episode[param.episode.slice(4,5)-1].url.indexOf("https://ok.ru/") !== -1 && <iframe title="phim" src={data.episode[param.episode.slice(4,5)-1].url} allow="fullscreen" webkitallowfullscreen="true" mozallowfullscreen="true" />
                 }
                 {
                     data.episode[param.episode.slice(4,5)-1].url !== '' && data.episode[param.episode.slice(4,5)-1].url.indexOf("https://ok.ru/") === -1 && <div style={{padding: "0 0 10px 0", textAlign: "center"}}>Rất tiếc, tập phim này hiện chưa được cập nhật.</div>
