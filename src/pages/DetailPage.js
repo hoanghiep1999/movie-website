@@ -45,7 +45,7 @@ const DetailPage = () => {
                                                 <Link to={`/watchmovie/title=${item.urlTitle}&episode=tap-${num.episode}`}>Tập {num.episode}</Link>
                                             </li> 
                                         )}
-                                    </ul>
+                                     </ul>
                                     <ul className="main-detail-description">
                                         <li>Thời lượng: <span>?? phút/tập</span></li>
                                         <li>Năm sản xuất: <span>??</span></li>
