@@ -48,24 +48,24 @@ const SearchPage = () => {
                     parseInt(param.page) === 1 ? <PaginationItem disabled>
                         <PaginationLink
                         first
-                        href={`/search/name=${param.name}&page=1`}
+                        href={`/movie-website/search/name=${param.name}&page=1`}
                         />
                     </PaginationItem> : <PaginationItem>
                         <PaginationLink
                         first
-                        href={`/search/name=${param.name}&page=1`}
+                        href={`/movie-website/search/name=${param.name}&page=1`}
                         />
                     </PaginationItem>
                 }
                 {
                     parseInt(param.page) === 1 ? <PaginationItem disabled>
                         <PaginationLink
-                        href={`/search/name=${param.name}&page=${parseInt(param.page)-1}`}
+                        href={`/movie-website/search/name=${param.name}&page=${parseInt(param.page)-1}`}
                         previous
                         />
                     </PaginationItem> : <PaginationItem>
                         <PaginationLink
-                        href={`/search/name=${param.name}&page=${parseInt(param.page)-1}`}
+                        href={`/movie-website/search/name=${param.name}&page=${parseInt(param.page)-1}`}
                         previous
                         />
                     </PaginationItem>
@@ -76,12 +76,12 @@ const SearchPage = () => {
                 {
                     parseInt(param.page) > 0 && parseInt(param.page) < numPage ? <PaginationItem>
                         <PaginationLink
-                        href={`/search/name=${param.name}&page=${parseInt(param.page)+1}`}
+                        href={`/movie-website/search/name=${param.name}&page=${parseInt(param.page)+1}`}
                         next
                         />
                     </PaginationItem> : <PaginationItem disabled>
                         <PaginationLink
-                        href={`/search/name=${param.name}&page=${parseInt(param.page)+1}`}
+                        href={`/movie-website/search/name=${param.name}&page=${parseInt(param.page)+1}`}
                         next
                         />
                     </PaginationItem>
@@ -89,12 +89,12 @@ const SearchPage = () => {
                 {
                     parseInt(param.page) === numPage ? <PaginationItem disabled>
                         <PaginationLink
-                        href={`/search/name=${param.name}&page=${numPage}`}
+                        href={`/movie-website/search/name=${param.name}&page=${numPage}`}
                         last
                         />
                     </PaginationItem> : <PaginationItem>
                         <PaginationLink
-                        href={`/search/name=${param.name}&page=${numPage}`}
+                        href={`/movie-website/search/name=${param.name}&page=${numPage}`}
                         last
                         />
                     </PaginationItem>

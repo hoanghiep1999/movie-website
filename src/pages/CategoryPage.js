@@ -60,24 +60,24 @@ const CategoryPage = () => {
                                 parseInt(param.page) === 1 ? <PaginationItem disabled>
                                     <PaginationLink
                                     first
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=1`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=1`}
                                     />
                                 </PaginationItem> : <PaginationItem>
                                     <PaginationLink
                                     first
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=1`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=1`}
                                     />
                                 </PaginationItem>
                             }
                             {
                                 parseInt(param.page) === 1 ? <PaginationItem disabled>
                                     <PaginationLink
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)-1}`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)-1}`}
                                     previous
                                     />
                                 </PaginationItem> : <PaginationItem>
                                     <PaginationLink
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)-1}`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)-1}`}
                                     previous
                                     />
                                 </PaginationItem>
@@ -88,12 +88,12 @@ const CategoryPage = () => {
                             {
                                 parseInt(param.page) > 0 && parseInt(param.page) < numPage ? <PaginationItem>
                                     <PaginationLink
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)+1}`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)+1}`}
                                     next
                                     />
                                 </PaginationItem> : <PaginationItem disabled>
                                     <PaginationLink
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)+1}`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=${parseInt(param.page)+1}`}
                                     next
                                     />
                                 </PaginationItem>
@@ -101,12 +101,12 @@ const CategoryPage = () => {
                             {
                                 parseInt(param.page) === numPage ? <PaginationItem disabled>
                                     <PaginationLink
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${numPage}`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=${numPage}`}
                                     last
                                     />
                                 </PaginationItem> : <PaginationItem>
                                     <PaginationLink
-                                    href={`/category/category=${item.category.replace(/\s/g, '-')}&page=${numPage}`}
+                                    href={`/movie-website/category/category=${item.category.replace(/\s/g, '-')}&page=${numPage}`}
                                     last
                                     />
                                 </PaginationItem>
