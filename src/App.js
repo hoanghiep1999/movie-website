@@ -14,7 +14,7 @@ import './css/App.css';
 
 function App() {
   return (
-    <Router basename="movie-website">
+    <Router>
       <DataProvider>
         <ScrollToTop>
           <div className="App">
