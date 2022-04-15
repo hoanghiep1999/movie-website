@@ -1,0 +1,11 @@
+.loading {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-svg {
+    width: 40px;
+    margin-right: 12px;
+}

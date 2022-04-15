@@ -1,0 +1,377 @@
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.form, .container {
+  padding: 30px;
+}
+
+.form {
+  width: 20%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input, .form-group select {
+  display: block;
+  margin-top: 8px;
+}
+
+.form-group label {
+  display: block;
+  width: 50%;
+}
+
+.form-group select {
+  outline: none;
+  width: 120px;
+  padding: 6px 8px;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  background-color: rgb(4, 209, 4);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all .3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  background-color: rgb(3, 156, 3);
+}
+
+.btn--myheroes {
+  margin-left: 10px;
+}
+
+.btn--myheroes:disabled {
+  background-color: #6c757d;
+  cursor: default;
+}
+
+.btn--createheroes:disabled {
+  background-color: #6c757d;
+  cursor: default;
+}
+
+.container {
+  flex: 1;
+}
+
+.container-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-top a {
+  text-decoration: underline;
+  font-size: 17px;
+  color: red;
+}
+
+.container-top a:hover {
+  text-decoration: none;
+}
+
+.container-top-address {
+  color: rgb(4, 209, 4);
+  font-size: 17px;
+}
+
+.container-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0 0 -20px;
+}
+
+.container-item {
+  width: calc(25% - 22px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 20px 20px;
+  padding: 20px 0;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+.container-item:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.container-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.container-item-data {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-item-data > span {
+  display: block;
+  margin: 4px 0;
+}
+
+.container-item-data > span span {
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.container-item button {
+  outline: none;
+  padding: 6px 12px;
+  border: 1px solid rgb(80, 80, 247);
+  background-color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all .3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.container-item button:hover {
+  border: 1px solid transparent;
+  background-color: rgb(80, 80, 247);
+  color: #fff;
+}
+
+.btn--details {
+  margin: 12px 0;
+  display: none;
+}
+
+.detail-modal, .transfer-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+}
+
+.detail-modal.active, .transfer-modal.active {
+  display: block;
+}
+
+.detail-modal-overlay, .transfer-modal-overlay {
+  background-color: rgba(0,0,0,0.2);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.detail-modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,  -50%);
+  background-color: #fff;
+  width: 200px;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9999;
+}
+
+.detail-modal-icon {
+  font-size: 19px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.detail-modal-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-modal-data > span {
+  display: block;
+  margin: 4px 0;
+}
+
+.detail-modal-data > span span {
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.transfer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,  -50%);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all .6s;
+  z-index: 9999;
+}
+
+.transfer-form {
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 16px 22px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.transfer-form-icon {
+  align-self: flex-end;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.transfer-form input {
+  outline: none;
+  display: block;
+  padding: 8px 12px;
+  margin-top: 13px;
+  font-size: 15px;
+}
+
+.transfer-button-wrap {
+  margin-top: 10px;
+}
+
+.transfer-button {
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all .3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.transfer-button--transfer {
+  margin-right: 12px;
+  background-color: rgb(4, 209, 4);
+  color: #fff;
+}
+
+.transfer-button--transfer:hover {
+  background-color: rgb(3, 156, 3);
+}
+
+.transfer-button--cancel {
+  border: 1px solid #dc3545;
+  background-color: #fff;
+}
+
+.transfer-button--cancel:hover {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+@media screen and (max-width: 1159px) {
+  .container-item {
+    width: calc(33.3334% - 22px);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .form {
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 859px) {
+  .form {
+    width: 25%;
+  }
+
+  .container-list {
+    margin-left: -10px;
+  }
+
+  .container-item {
+    width: calc(33.3334% - 10px);
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    width: 30%;
+  }
+
+  .container-item {
+    width: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 559px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .form, .container {
+    width: 100%;
+  }
+
+  .form-group select {
+    width: 40%;
+  }
+
+  .form {
+    padding-bottom: 10px;
+  }
+
+  .container {
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+  }
+
+  .container-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container-item-data {
+    display: none;
+  }
+
+  .container-top a, .container-top-address {
+    display: block;
+    margin-top: 10px;
+    word-break: break-word;
+  }
+
+  .btn--details {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .form-group select {
+    width: 50%;
+  }
+
+  .container-item {
+    padding-inline: 10px;
+  }
+
+  .container-item img {
+    width: 80px;
+    height: 80px;
+  }
+}
